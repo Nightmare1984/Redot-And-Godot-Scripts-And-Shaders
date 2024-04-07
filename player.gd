@@ -1,4 +1,5 @@
 extends CharacterBody3D
+
 #player vars
 
 @onready var head = $head
@@ -10,7 +11,6 @@ extends CharacterBody3D
 
 var current_speed = 5.0
 @export var walking_speed = 5.0
-@export var jump_velocity = 4.5
 @export var sprinting_speed = 8.0
 @export var crouching_speed = 3.0
 var lerp_speed = 10.0
@@ -20,8 +20,9 @@ var lerp_speed = 10.0
 var direction = Vector3.ZERO
 @export var mouse_sens = 0.4
 
-#Crouching Var
+#Movement Vars
 
+@export var jump_velocity = 4.5
 @export var crouching_depth = -0.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -38,6 +39,8 @@ func _input(event):
 
 
 func _physics_process(delta):
+	
+	#HandelMovementState
 	
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
