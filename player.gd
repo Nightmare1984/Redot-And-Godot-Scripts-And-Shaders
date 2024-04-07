@@ -1,21 +1,26 @@
 extends CharacterBody3D
+#player vars
 
 @onready var head = $head
 @onready var standing_collision = $"standing collision"
 @onready var crouching_collision = $"crouching collision"
 @onready var ray_cast_3d = $RayCast3D
 
-var current_speed = 5.0
+#Speed Vars
 
+var current_speed = 5.0
 @export var walking_speed = 5.0
 @export var jump_velocity = 4.5
 @export var sprinting_speed = 8.0
 @export var crouching_speed = 3.0
-@export var mouse_sens = 0.4
-
 var lerp_speed = 10.0
 
+#Mouse Vars
+
 var direction = Vector3.ZERO
+@export var mouse_sens = 0.4
+
+#Crouching Var
 
 @export var crouching_depth = -0.5
 
