@@ -8,7 +8,7 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	if body == player and not has_played:  # Check if the body is the player we specified
+	if body == player and not has_played:  # Check if the body is the player
 		if audio_player:
 			audio_player.play()
 			has_played = true
